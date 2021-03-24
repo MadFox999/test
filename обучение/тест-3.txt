@@ -1,0 +1,11 @@
+echo 'Hello' > file2
+cat /var/log/auth.log > auth.log
+
+cat /etc/*
+cat /etc/* >> errors.log
+
+ls | cut -d' ' -f 1 |sort|uniq|wc -l
+
+
+find -name ".*" | wc -l
+
