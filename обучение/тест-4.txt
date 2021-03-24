@@ -1,0 +1,29 @@
+sudo useradd -m test
+sudo userdel -r test
+
+sudo groupadd developer
+sudo usermod -aG developer test
+sudo usermod -s /bin/bash test
+sudo gpasswd -d test developer
+
+sudo usermod -aG sudo test
+sudo view /etc/sudoers.d/developer
+внутри файла пишем перечень команд к которым не будет требоваться пароль:
+%developer ALL=NOPASSWD: /usr/sbin/tcpdump
+
+touch file1
+touch file2
+chmod 664 file1
+chmod 644 file2
+chmod u=rw,g=rw,o=r file1
+chmod u=rw,g=r,o=r file2
+
+sudo groupadd developer
+sudo useradd -mG developer -s /bin/bash test
+sudo passwd test
+sudo useradd -mG developer -s /bin/bash test2
+sudo passwd test2
+sudo mkdir /home/shara_all
+sudo chmod -R 2775 /home/shara_all
+
+
