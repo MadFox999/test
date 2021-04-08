@@ -52,6 +52,4 @@ location /conf {
        return 200 'Hello main.conf!';
 #       add_header Content-Type text/plain;
     }
-
-
 }
